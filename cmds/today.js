@@ -11,7 +11,7 @@ module.exports = async (args) => {
     spinner.stop()
 
     console.log(`Heads up, the current conditions in ${location}:`)
-    console.log(`\t${weather.condition.temp}° ${weather.condition.text}`)
+    console.log(`\t${weather.lon}° ${weather.lat}`)
   } catch (err) {
     spinner.stop()
 

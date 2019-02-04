@@ -1,15 +1,7 @@
-const axios = require('axios')
+const cities = require("all-the-cities")
 
 module.exports = async (location) => {
-    const results = await axios({
-      method: 'get',
-      url: 'https://query.yahooapis.com/v1/public/yql',
-      params: {
-        format: 'json',
-        q: `select item from weather.forecast where woeid in
-          (select woeid from geo.places(1) where text="${location}")`,
-      },
-    })
-  
-    return results.data.query.results.channel.item
+    let cityInfo = cities.filter(city => city.name.match(location))[0]
+    console.log(cityInfo)
+    return cityInfo
   }
