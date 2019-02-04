@@ -15,17 +15,4 @@ module.exports = (args) => {
             spinner.stop()
             return console.error(`Error in today.js: ${err}`)
         })
-//   try {
-//     const location = args.location || args.l
-//     const weather = await getWeather(location)
-
-//     spinner.stop()
-
-//     console.log(`Heads up, the current conditions in ${location}:`)
-//     console.log(`\t${weather}° `)
-//   } catch (err) {
-//     spinner.stop()
-
-//     console.error(err)
-//   }
 }
