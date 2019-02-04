@@ -1,20 +1,31 @@
 const ora = require('ora')
 const getWeather = require('../utils/weather')
 
-module.exports = async (args) => {
+module.exports = (args) => {
   const spinner = ora().start()
+  const location = args.location || args.l
+    getWeather(location)
+        .then(res => {
+            spinner.stop()
+            console.log(`Heads up, the current conditions in ${location}:`)
+            console.log(`\t${res.currently.temperature}° `)
+            return res
+        })
+        .catch(err => {
+            spinner.stop()
+            return console.error(`Error in today.js: ${err}`)
+        })
+//   try {
+//     const location = args.location || args.l
+//     const weather = await getWeather(location)
 
-  try {
-    const location = args.location || args.l
-    const weather = await getWeather(location)
+//     spinner.stop()
 
-    spinner.stop()
+//     console.log(`Heads up, the current conditions in ${location}:`)
+//     console.log(`\t${weather}° `)
+//   } catch (err) {
+//     spinner.stop()
 
-    console.log(`Heads up, the current conditions in ${location}:`)
-    console.log(`\t${weather.lon}° ${weather.lat}`)
-  } catch (err) {
-    spinner.stop()
-
-    console.error(err)
-  }
+//     console.error(err)
+//   }
 }
