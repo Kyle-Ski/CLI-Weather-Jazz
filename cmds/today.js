@@ -8,7 +8,7 @@ module.exports = (args) => {
         .then(res => {
             spinner.stop()
             console.log(`Heads up, the current conditions in ${location}:`)
-            console.log(`\t${res.currently.temperature}° `)
+            console.log(`Summary: ${res.currently.summary}, ${res.currently.temperature}° with winds at: ${res.currently.windSpeed} mph. Cloud cover is at ${res.currently.cloudCover * 100}% with ${res.currently.humidity * 100}% humidity.`)
             return res
         })
         .catch(err => {
