@@ -3,7 +3,7 @@ const menus = {
       outdoors [command] <options>
   
       today .............. show weather for today
-      forcast ............ show a 10-day weather forcast
+      forecast ............ show a 10-day weather forcast
       tomorrow ........... show the weather for tommorow
       version ............ show package version
       help ............... show help menu for a command`,
