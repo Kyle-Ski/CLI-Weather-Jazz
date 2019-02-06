@@ -1,17 +1,17 @@
 const menus = {
     main: `
-      outdoors [command] <options>
+      outdoors [command] <option>
   
+      Commands:
       today .............. show weather for today
       forecast ............ show a 10-day weather forcast
       tomorrow ........... show the weather for tommorow
       version ............ show package version
-      help ............... show help menu for a command`,
-  
-    today: `
-      outdoors today <options>
-  
-      --location, -l ..... the location to use`,
+      help ............... show help menu for a command
+      
+      Option: 
+      --location || -l <city name>`,
+    
   }
   
   module.exports = (args) => {

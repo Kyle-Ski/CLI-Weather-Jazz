@@ -14,11 +14,7 @@ module.exports = (args) => {
     getWeather(location)
         .then(res => {
             spinner.stop()
-            console.log(`Look out, the forecast for the week in ${location}:\n`)
-            // console.log(`Summary: ${res.currently.summary}, ${res.currently.temperature}° with winds at: ${res.currently.windSpeed} mph. Cloud cover is at ${res.currently.cloudCover * 100}% with ${res.currently.humidity * 100}% humidity.`)
-            // new Date(unix timestamp * 1000)
-            // .toISOString() and .toString()
-            // console.log(res.daily.data)
+            console.log(`Check it out, the forecast for tomorrow in ${location}:\n`)
             formatTomorrow(res)
             return res
         })

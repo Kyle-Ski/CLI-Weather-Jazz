@@ -7,11 +7,8 @@ module.exports = (args) => {
     getWeather(location)
         .then(res => {
             spinner.stop()
-            console.log(`Heads up, the current conditions in ${location}:`)
-            console.log(`Summary: ${res.currently.summary}, ${res.currently.temperature}° with winds at: ${res.currently.windSpeed} mph. Cloud cover is at ${res.currently.cloudCover * 100}% with ${res.currently.humidity * 100}% humidity.`)
-            // new Date(unix timestamp * 1000)
-            // .toISOString() and .toString()
-            // console.log(res.daily.data[0].time)
+            console.log(`Heads up, the current conditions in ${location}:\n`)
+            console.log(`Summary: ${res.currently.summary}\nPrecip chance: ${res.currently.precipProbability}% \nTemperature: ${res.currently.temperature}°\nWind: ${res.currently.windSpeed} mph, Cloud Cover: ${res.currently.cloudCover * 100}%, with ${res.currently.humidity * 100}% humidity.\nThe Nearest Storm is ${res.currently.nearestStormDistance} miles away\n----------------------------`)
             return res
         })
         .catch(err => {
